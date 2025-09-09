@@ -1,0 +1,83 @@
+#Ena was here!!
+# This code was made in Python on onlinegbd.com
+# This code finds the roots of a quadratic equation using two methods
+# DO NOT ENTER DECIMAL NUMBES FOR THE VALUES OF A B OR C
+# The code will not work if you do that
+
+
+# Math libray 
+import math
+
+# Values/variebles 
+# User input 
+a =int(input('enter a value for a'))
+b = int(input('enter a value for b'))
+c= int(input('enter a value for c'))
+
+# How to find the roots of a quadratic equation ax^2 + bx + c = 0
+# Using the quadratic formula and Pohs method
+# Broken down into two methods
+
+
+
+
+# Everything in the square root of the equation 
+print('using the quadratic formula')
+discrimanate= (b*b - 4 * a * c)
+
+# Discimates <0 no roots meaning it does not fall on any point on the x axis
+if discrimanate < 0:
+    print('there are no roots')
+# Discimates =0 one root if there is one root you can find that value by root= - b/(2*a)
+elif discrimanate == 0:
+#identifies there is one root and helps with the process of finding it and making sure its correct
+    print('there is one root')
+    root= - b/(2*a)
+    print(root)
+    # Tells the program that if everything else is false then there are two roots and to find them
+else :
+    root1 = (-b + math.sqrt(b*b - 4 * a * c))/(2*a)
+    root2 = (-b - math.sqrt(b*b- 4 * a * c))/(2*a)
+    # Prints the roots out to the user
+    print(root1)
+    print (root2)
+
+
+
+# Using Pohs method
+# Dividing everything by a to make the equation x^2 + (b/a)x + (c/a) = 0
+# This makes it easier to work with
+
+
+# Variables and values Pohs method
+print ('using pohs method  ')
+b = b / a
+c = c / a
+M = - b/2 
+# "print(f"M is {M}")" This was helping with testing for erros 
+discrimante2= M*M - c
+# "print(f"discrimante2 is {discrimante2}")" This was helping with testing for erros
+if discrimante2 < 0:
+    print("there are no roots")
+      # Discimates =0 meaning there is one root finding the value of M to find just one root for Phos method
+elif discrimante2 == 0:
+# Identifies there is one root and helps with the process of finding it and making sure its correct
+# Prints out the value of M which is the root to the user if there is one root 
+    print ("there is one root")
+    print(M)
+    # Tells the program that if everything else is false then there are two roots and to find them
+else:
+    u = math.sqrt(discrimante2)
+    print(f"u is {u}")
+    root1 = M + u
+    root2 = M - u
+    #Prints the roots out to the user in Pohs method
+    print(root1)
+    print(root2)
+
+
+bool = input('do you want to run the program again? y/n')
+if bool == 'y':
+    exec(open(__file__).read())
+else:
+    print('ok bye')# End of program
